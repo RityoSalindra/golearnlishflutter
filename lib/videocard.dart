@@ -53,7 +53,7 @@ class CardCourses extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.normal,
-                    color: Color(0xFFF18C8E),
+                    color: Colors.red,
                   ),
                 ),
               ],
@@ -84,10 +84,9 @@ class CardCourses extends StatelessWidget {
                   lineWidth: 2.0,
                   animation: true,
                   percent: percentage,
-                  center:
-                      const Icon(Icons.play_arrow, color: Color(0xFFF18C8E)),
+                  center: const Icon(Icons.play_arrow, color: Colors.red),
                   circularStrokeCap: CircularStrokeCap.round,
-                  progressColor: const Color(0xFFF18C8E),
+                  progressColor: Colors.red,
                 ),
               )
             ],

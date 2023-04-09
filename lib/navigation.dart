@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:golearnlish/dasboard.dart';
-import 'package:golearnlish/profile.dart';
-import 'package:golearnlish/belajar.dart';
-import 'package:golearnlish/quiz.dart';
+import 'package:golearnlish/screens/belajar.dart';
+import 'package:golearnlish/screens/quiz.dart';
+import 'package:golearnlish/screens/profil.dart';
 
 class navigation extends StatefulWidget {
   const navigation({super.key});
@@ -29,11 +29,14 @@ class _navigationState extends State<navigation> {
   }
 
   Widget buildPageView() {
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height * 0.93,
       child: PageView(
         controller: _pageController,
         children: [
+          // LoginScreen(),
+          // SignUp(),
+          // ForgotPassword(),
           dasboard(),
           belajar(),
           quiz(),
@@ -49,7 +52,7 @@ class _navigationState extends State<navigation> {
   Widget buildBottomNav() {
     return BottomNavigationBar(
       currentIndex: selectedPage,
-      selectedItemColor: Colors.amber[800],
+      selectedItemColor: Colors.red[800],
       type: BottomNavigationBarType.fixed,
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(

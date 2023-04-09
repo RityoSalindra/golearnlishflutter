@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:golearnlish/navigation.dart';
+import 'package:golearnlish/screens/belajar.dart';
 
 class dasboard extends StatefulWidget {
   const dasboard({super.key});
@@ -26,14 +28,19 @@ class _dasboardState extends State<dasboard> {
             },
           ),
         ],
-        backgroundColor: Color(0xFFE0E6F3),
+        backgroundColor: Colors.red,
       ),
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.all(8),
           children: <Widget>[
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const navigation()),
+                );
+              },
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 16.0),
                 decoration: BoxDecoration(
@@ -46,9 +53,9 @@ class _dasboardState extends State<dasboard> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.blue,
-                      ),
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              image: AssetImage("lib/assets/images/vid.png"))),
                       width: 70.0,
                       height: 70.0,
                     ),
@@ -81,9 +88,9 @@ class _dasboardState extends State<dasboard> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.grey,
-                      ),
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              image: AssetImage("lib/assets/images/buku.png"))),
                       width: 70.0,
                       height: 70.0,
                     ),

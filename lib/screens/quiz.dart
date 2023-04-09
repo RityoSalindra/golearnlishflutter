@@ -26,7 +26,7 @@ class _quizState extends State<quiz> {
             },
           ),
         ],
-        backgroundColor: Color(0xFFE0E6F3),
+        backgroundColor: Colors.red,
       ),
     );
   }

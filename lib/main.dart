@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:golearnlish/navigation.dart';
+import 'package:golearnlish/screens/loginpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: navigation(),
+      home: LoginScreen(),
     );
   }
 }
