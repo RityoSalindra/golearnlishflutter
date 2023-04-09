@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class quiz extends StatelessWidget {
+class quiz extends StatefulWidget {
   const quiz({super.key});
 
+  @override
+  State<quiz> createState() => _quizState();
+}
+
+class _quizState extends State<quiz> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
