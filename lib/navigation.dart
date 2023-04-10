@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:golearnlish/dasboard.dart';
+import 'package:golearnlish/main.dart';
 import 'package:golearnlish/screens/belajar.dart';
-import 'package:golearnlish/screens/quiz.dart';
+import 'package:golearnlish/screens/mainquiz.dart';
 import 'package:golearnlish/screens/profil.dart';
 
 class navigation extends StatefulWidget {
@@ -39,7 +40,7 @@ class _navigationState extends State<navigation> {
           // ForgotPassword(),
           dasboard(),
           belajar(),
-          quiz(),
+          MainQuiz(),
           profile(),
         ],
         onPageChanged: (index) {
