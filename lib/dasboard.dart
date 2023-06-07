@@ -30,87 +30,85 @@ class _dasboardState extends State<dasboard> {
         ],
         backgroundColor: Colors.red,
       ),
-      body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.all(8),
-          children: <Widget>[
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const navigation()),
-                );
-              },
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 16.0),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(width: 0.1, color: Colors.grey)),
-                width: 100.0,
-                height: 100.0,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                              image: AssetImage("lib/assets/images/vid.png"))),
-                      width: 70.0,
-                      height: 70.0,
-                    ),
-                    SizedBox(width: 20.0),
-                    Text(
-                      'Video',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
+      body: Container(
+        color: const Color(0xFFF2F6FC),
+        child: SafeArea(
+          child: ListView(
+            padding: const EdgeInsets.all(8),
+            children: <Widget>[
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(width: 0.1, color: Colors.grey)),
+                  height: 100.0,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                                image:
+                                    AssetImage("lib/assets/images/vid.png"))),
+                        width: 70.0,
+                        height: 70.0,
                       ),
-                    ),
-                  ],
+                      const SizedBox(width: 20.0),
+                      Text(
+                        'Video',
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            InkWell(
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 16.0),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(width: 0.1, color: Colors.grey)),
-                width: 100.0,
-                height: 100.0,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                              image: AssetImage("lib/assets/images/buku.png"))),
-                      width: 70.0,
-                      height: 70.0,
-                    ),
-                    SizedBox(width: 20.0),
-                    Text(
-                      'Quiz',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
+              const SizedBox(
+                height: 10.0,
               ),
-            )
-          ],
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(width: 0.1, color: Colors.grey)),
+                  height: 100.0,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                                image:
+                                    AssetImage("lib/assets/images/buku.png"))),
+                        width: 70.0,
+                        height: 70.0,
+                      ),
+                      const SizedBox(width: 20.0),
+                      Text(
+                        'Quiz',
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
-      backgroundColor: Color(0xFFF2F6FC),
     );
   }
 }
