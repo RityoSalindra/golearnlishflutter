@@ -80,7 +80,7 @@ class _ProfileInfoRow extends StatelessWidget {
         //               Expanded(child: _singleItem(context, item)),
         //             ],
         //           )))
-        //       .toList(),
+        //       .toList(),dewwde
       ),
     );
   }
