@@ -15,50 +15,49 @@ class MainQuiz extends StatefulWidget {
 class _MainQuizState extends State<MainQuiz> {
   static const _data = [
     {
-      'questionText':
-          'Flutter is an _____ mobile aplication development framework developed by Google.',
+      'questionText': 'the verb 2 of go is?',
       'answers': [
-        {'text': 'Open-source', 'score': 10.00},
-        {'text': 'Shareware', 'score': 4.61},
-        {'text': 'Both', 'score': 1.95},
+        {'text': 'went', 'score': 10.00},
+        {'text': 'gone', 'score': 4.61},
+        {'text': 'goes', 'score': 1.95},
         {'text': 'None of the above', 'score': 0.00},
       ]
     },
     {
+      'questionText': 'they didnt do anything',
+      'answers': [
+        {'text': 'when', 'score': 2.3},
+        {'text': 'future', 'score': 0.32},
+        {'text': 'present', 'score': 3.00},
+        {'text': 'past', 'score': 10.00},
+      ]
+    },
+    {
       'questionText':
-          'Flutter apps are written in the _____ language and make use of many advanced features of this language.',
+          'if they ____ informed us about the test, we would get a better score',
       'answers': [
-        {'text': 'Java', 'score': 2.3},
-        {'text': 'HTML', 'score': 0.32},
-        {'text': 'JavaScript', 'score': 3.00},
-        {'text': 'Dart', 'score': 10.00},
+        {'text': 'dont', 'score': 0.64},
+        {'text': 'had', 'score': 10.00},
+        {'text': 'will', 'score': 3.28},
+        {'text': 'some', 'score': 1.02}
       ]
     },
     {
-      'questionText': 'Which of the following widgets is used for layouts?',
+      'questionText': 'andy bought not only a new car, but also',
       'answers': [
-        {'text': 'Text', 'score': 0.64},
-        {'text': 'Column', 'score': 10.00},
-        {'text': 'Inkwell', 'score': 3.28},
-        {'text': 'Expanded', 'score': 1.02}
+        {'text': 'old house', 'score': 0.12},
+        {'text': 'fish', 'score': 2.13},
+        {'text': 'people', 'score': 6.42},
+        {'text': 'new house', 'score': 10.00}
       ]
     },
     {
-      'questionText': 'When was Flutter first described?',
+      'questionText': 'Bats ___ find their prey in the darkness',
       'answers': [
-        {'text': '2012', 'score': 0.12},
-        {'text': '2013', 'score': 2.13},
-        {'text': '2017', 'score': 6.42},
-        {'text': '2015', 'score': 10.00}
-      ]
-    },
-    {
-      'questionText': 'When was Flutter released?',
-      'answers': [
-        {'text': '2016', 'score': 5.53},
-        {'text': '2017', 'score': 10.00},
-        {'text': '2013', 'score': 2.47},
-        {'text': '2019', 'score': 2.35}
+        {'text': 'fly', 'score': 5.53},
+        {'text': 'can', 'score': 10.00},
+        {'text': 'could', 'score': 2.47},
+        {'text': 'would', 'score': 2.35}
       ]
     }
   ];

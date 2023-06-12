@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:golearnlish/videocard.dart';
 import 'package:golearnlish/screens/detail.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class belajar extends StatefulWidget {
   const belajar({super.key});
@@ -12,29 +13,58 @@ class belajar extends StatefulWidget {
 }
 
 class _belajarState extends State<belajar> {
+  String? qrtext;
+  Map<String, dynamic> data = {};
+  final db =
+      FirebaseFirestore.instance.collection("learn").doc('belajar').snapshots();
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getDataQrText();
+  }
+
+  void getDataQrText() async {
+    var dataQRText = await FirebaseFirestore.instance
+        .collection('learn')
+        .doc('belajar')
+        .get();
+
+    setState(() {
+      qrtext = dataQRText.data()!['title'];
+      //data = dataQRText.docs.map((doc) => doc.data()).toList();
+    });
+  }
+
+  //FirebaseFirestore.instance.collection('golearn').doc('belajar').get().then((QuerySnapshot querySnapshot) {
+//querySnapshot.docs.forEach((doc) {
+//print(doc.data());
+//});
+//});
+
   List<Map<String, dynamic>> dataUtama = [
     {
-      "title": "Adobe XD Prototyping",
+      "title": "Simple past and present tense",
       "desc":
-          "Update 2 jam lalu. Di mana memiliki kekuatan super (Kebiasaan) adalah norma, Izuku diintimidasi karena dilahirkan dengan tidak ada.",
+          "In this type of tenses, the events or events you are talking abovut will be in the present and validly acknowledged. But there will be various conditions that describe different information focuses. You can also pay attention to two Simple Present Tense sentence patterns with those that have verbs and those that don't have verbs:",
       "hours": "10 hours, 19 lessons",
       // "image":
       //     Image.asset("lib/assets/images/video.jpg", width: 40, height: 40),
       "progress": "25%",
     },
     {
-      "title": "Sketch shortcuts and tricks",
+      "title": "Learning general vocabulary",
       "desc":
-          "Update 2 jam lalu. Di mana memiliki kekuatan super (Kebiasaan) adalah norma, Izuku diintimidasi karena dilahirkan dengan tidak ada.",
+          "In understanding English material for beginners, you will find some common vocabulary that people often use in their daily activities. Memorizing some new words is important so that you understand the essence of some simple conversations and two-way communication can work well.",
       "hours": "10 hours, 19 lessons",
       // "image":
       //     Image.asset("lib/assets/images/video.jpg", width: 40, height: 40),
       "progress": "50%",
     },
     {
-      "title": "UI Motion Design in After Effects",
+      "title": "introduction of verb",
       "desc":
-          "Update 2 jam lalu. Di mana memiliki kekuatan super (Kebiasaan) adalah norma, Izuku diintimidasi karena dilahirkan dengan tidak ada.",
+          "A verb that has a function as an action performed by the subject in a sentence. Written activities or activities can be in the form of movements or expressions that can be seen. Verb can be an action that appears abstractly (not clearly visible, readable only in thoughts or feelings).",
       "hours": "10 hours, 19 lessons",
       // "image":
       //     Image.asset("lib/assets/images/video.jpg", width: 40, height: 40),
@@ -62,56 +92,20 @@ class _belajarState extends State<belajar> {
         backgroundColor: Colors.red,
       ),
       body: SafeArea(
-        child: ListView.builder(
-          scrollDirection: Axis.vertical,
-          physics: const NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
-          itemCount: dataUtama.length,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.0),
-              child: Column(
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => Detail(
-                                    dataUtama: dataUtama[index],
-                                  )));
-                    },
-                    child: CardCourses(
-                      image: Image.asset("lib/assets/images/video.jpg",
-                          width: 40, height: 40),
-                      color: Colors.white,
-                      title: '${dataUtama[index]["title"]}',
-                      hours: '${dataUtama[index]["hours"]}',
-                      progress: '${dataUtama[index]["progress"]}',
-                      percentage: 0.25,
-                    ),
-                  ),
-                  // CardCourses(
-                  //   image: Image.asset("lib/assets/images/video.jpg",
-                  //       width: 40, height: 40),
-                  //   color: Colors.white,
-                  //   title: '${dataUtama[index]["title"]}',
-                  //   hours: '${dataUtama[index]["hours"]}',
-                  //   progress: '${dataUtama[index]["progress"]}',
-                  //   percentage: 0.5,
-                  // ),
-                  // CardCourses(
-                  //   image: Image.asset("lib/assets/images/video.jpg",
-                  //       width: 40, height: 40),
-                  //   color: Colors.white,
-                  //   title: '${dataUtama[index]["title"]}',
-                  //   hours: '${dataUtama[index]["hours"]}',
-                  //   progress: '${dataUtama[index]["progress"]}',
-                  //   percentage: 0.75,
-                  // ),
-                ],
-              ),
-            );
+        child: StreamBuilder(
+          stream: db,
+          builder: (context, snapshot) {
+            // Handle the snapshot data and return a Widget
+            if (snapshot.hasData) {
+              // Process the data and return a specific Widget
+              return Text('Data received: ${snapshot.data}');
+            } else if (snapshot.hasError) {
+              // Handle the error and return an error Widget
+              return Text('Error occurred: ${snapshot.error}');
+            } else {
+              // Return a default Widget or a progress indicator
+              return CircularProgressIndicator();
+            }
           },
         ),
       ),

@@ -25,7 +25,11 @@ class _navigationState extends State<navigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(children: [buildPageView(), buildBottomNav()]),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [buildPageView(), buildBottomNav()],
+        ),
+      ),
     );
   }
 

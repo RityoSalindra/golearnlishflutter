@@ -16,7 +16,7 @@ class profile extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    "Richie Lorie",
+                    "Susanti",
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge
@@ -80,7 +80,7 @@ class _ProfileInfoRow extends StatelessWidget {
         //               Expanded(child: _singleItem(context, item)),
         //             ],
         //           )))
-        //       .toList(),
+        //       .toList(),dewwde
       ),
     );
   }
